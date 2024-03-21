@@ -7,13 +7,14 @@ import streamlit as st
 import yfinance as yf
 import seaborn as sns
 import datetime as dt
-
+import plotly.graph_objects as go
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense,Dropout,LSTM
+from ta import momentum
 
-start = '2012-01-01'
+start = '2014-01-01'
 stop = '2024-03-21'
 
 st.title('Stock Mark')
@@ -53,7 +54,7 @@ company = st.text_input('Enter Stock','META')
 
 data = yf.download(company, start=start, end=stop)
 
-st.subheader('Date from 2012 - 2023')
+st.subheader('Date from 2014 - 2023')
 st.write(data.describe())
 st.write(data.tail(60))
 
@@ -90,8 +91,6 @@ if st.button('Features'):
     st.pyplot(fig)
 
 
-import plotly.graph_objects as go
-
 # Create candlestick chart
 fig = go.Figure(data=go.Candlestick(x=data.index,
                 open=data['Open'],
@@ -120,7 +119,6 @@ plt.title('Stock Price with Moving Average')
 plt.legend()
 st.pyplot(plt)
 
-import yfinance as yf
 
 # User input for multiple stock symbols
 symbols = st.text_input('Enter Stock Symbols (comma-separated)', 'AAPL,GOOGL,MSFT')
@@ -138,7 +136,6 @@ plt.ylabel('Price')
 plt.title('Stock Prices Comparison')
 plt.legend()
 st.pyplot(plt)
-import streamlit as st
 
 # Streamlit app setup
 st.title("Personalized Watchlists")
@@ -175,10 +172,6 @@ if st.button('Historical Returns'):
     plt.ylabel('Cumulative Returns')
     plt.title('Historical Cumulative Returns')
     st.pyplot()
-
-
-import yfinance as yf
-from ta import momentum
 
 # Calculate RSI
 data['RSI'] = momentum.RSIIndicator(data['Close']).rsi()
