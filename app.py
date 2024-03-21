@@ -295,3 +295,6 @@ if len(filtered_data) > 0:
     st.dataframe(filtered_data)
 else:
     st.info("No stocks match the selected criteria.")
+
+
+
