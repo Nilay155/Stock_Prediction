@@ -11,4 +11,3 @@ scikit-learn
 tensorflow
 ta
 matplotlib
-model.h5
