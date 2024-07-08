@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import pandas_datareader as pdr
 from keras.models import load_model
 import streamlit as st
@@ -13,7 +12,7 @@ import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense,Dropout,LSTM
 from ta import momentum
-
+import matplotlib.pyplot as plt
 start = '2014-01-01'
 stop = '2024-03-21'
 
