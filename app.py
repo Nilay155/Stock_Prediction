@@ -14,7 +14,7 @@ from ta import momentum
 import matplotlib.pyplot as plt
 
 start = '2014-01-01'
-stop = '2024-03-21'
+stop = '2024-07-09'
 
 st.title('Stock Mark')
 
