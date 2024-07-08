@@ -5,7 +5,6 @@ import streamlit as st
 import yfinance as yf
 import seaborn as sns
 import datetime as dt
-from keras.models import load_model
 import plotly.graph_objects as go
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
