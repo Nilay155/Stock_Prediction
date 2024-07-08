@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import pandas_datareader as pdr
-from keras.models import load_model
 import streamlit as st
 import yfinance as yf
 import seaborn as sns
