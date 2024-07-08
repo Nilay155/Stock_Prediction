@@ -10,3 +10,5 @@ plotly
 scikit-learn
 tensorflow
 ta
+keras.models
+keras.layers
